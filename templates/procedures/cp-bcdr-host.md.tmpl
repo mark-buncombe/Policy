@@ -1,0 +1,19 @@
+### Production Host Recovery
+
+In the event a {{companyShortName}} virtual or physical host, or virtual infrastructure is not functioning, 
+failover to alternate site should be automatic and seamless. If this seamless HA failover does not occur as planned, 
+recovery and restoration plans will be exercised until services are restored to a normal working state. Restoration will be 
+coordinated by the Infrastructure / Operaions team lead, and BCDR communication plans will be exercised to inform users of impacted systems outage and expected duration/return to service.
+
+### HA Failover is best and fastest option. If this is not possible, restoration from short term archive will be performed.
+
+### Short term archive - If restoration from short term archive (<14 days Rubrik snapshot) is possible is required, restoration of most recent viable snapshot will be performed. If this is not possible, restoration from long term archive will be performed.
+
+### Long term archive - If restoration from long term archive is required, most recent backup will be restored to viable environment within the BC enterprise or cloud hosted environemnt to ensure functionality of systems and their data.
+
+### Physical systems are made HA by... TBD
+
+### Long term archive of physical systems is achived by... TBD
+
+### 3rd Party/Vendor systems that we are dependent on for business operations are reflected 
+in vendor dependencies and manual processes are defined in case of failure.

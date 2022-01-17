@@ -1,24 +1,27 @@
 ### Backup and Recovery
 
-#### Customer Data
+#### Intenral Customer Data
 
-{{companyShortName}} stores data in a secure production account in AWS, using a
-combination of S3, DynamoDB, and Aurora SQL databases. By default, Amazon S3
-provides durable infrastructure to store important data and is designed for
-durability of 99.999999999% of objects.
+{{companyShortName}} stores data locally onsite and in secure production accounts within MS Azure and third party vendor systems, using a
+variety of technologies and databases for both High Available and Archive solutions.
 
 {{#needStandardHIPAA}}
-All data store services and platforms in use are HIPAA compliant.
+All data store services and platforms in use are HIPAA compliant and undergo routine assessment.
 {{/needStandardHIPAA}}
+
+{{#needStandardCJIS}}
+All data store services and platforms in use are CJIS compliant and undergo routine assessment.
+{{/needStandardCJIS}}
 
 {{companyShortName}} performs automatic backup of all customer and system data to protect
 against catastrophic loss due to unforeseen events that impact the entire
-system. An automated process will back up all data to a separate AWS region in
-the same country (e.g. US East to US West). By default, data will be backed up
+system. 
+
+An automated process will back up all data to a separate County managed data center within the Western North Carolina Region. At minimum, data will be backed up
 daily. The backups are encrypted in the same way as live production data.
 
 Customers can also utilize the {{companyShortName}} Application Programming Interface (API)
-to extract and store their data elsewhere. Standard API usage fees will apply.
+to extract and store their data elsewhere. DO WE DO THIS WITH ANY OF OUR DEPENDENTANT SYSTEMS (WORKDAY?)
 
 #### Source code
 
@@ -29,28 +32,18 @@ account on a weekly basis with a common set of configuration for each repository
 to enforce SDLC processes.
 
 In the event that {{sourceControl}} suffers a catastrophic loss of data, source code
-will be restored from the backups in AWS S3.
+will be restored from the backups in xxx.
 
-Because AWS and {{sourceControl}} can both host git repositories, we are able to
+Because Azure and {{sourceControl}} can both host git repositories, we are able to
 leverage git's ability to maintain a full history of all changes to our git
 repos via the commit log.
 
 #### Business records and documents
 
-Each data owner/creator is responsible for maintaining a backup copy of their
-business files local on their laptop/workstation to the appropriate location on
-{{companyShortName}} SharePoint team site. Examples of business files include, but are not
-limited to:
+User files produced on local equipment are automatically replicated to MS OneDrive, as part of O365. 
 
-* Documents (e.g. product specs, business plans)
-* Presentations
-* Reports and spreadsheets
-* Design files/images/diagrams
-* Meeting notes/recordings
-* Important records (e.g. approval notes)
+Files stored within MS SharePoint, Teams, Network File Shares, and other repositories will be backedup XXX HOW FREQUENTLY, and retained for at least 6 years in accordance with HIPAA and CJIS best practices.
 
-Unless the local workstation/device has access to **Critical** data, backups of
-user workstations/devices are self managed by the device owner. Backups may be
-stored on an external hard drive or using a cloud service such as iCloud if and
-only if the data is both encrypted and password protected (passwords must meet
-{{companyShortName}} requirements).
+### 3rd Party Data
+
+{{companyShortName}} works closely with several vendors to operate its organization and provide services to citizens of the County. Data stored within these systems is routinely archived within Buncombe County IT Environemtns via API connectivity. METHODS, FREQUENCY, AND RETENTION DURATION IS AS FOLLOWS... 
